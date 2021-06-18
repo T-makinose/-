@@ -1,4 +1,5 @@
 function Maketimetable () {
+    
 }
 
 Maketimetable.prototype.maketimetable = function() {
