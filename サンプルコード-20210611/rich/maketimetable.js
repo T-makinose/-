@@ -6,6 +6,8 @@ Maketimetable.prototype.maketimetable = function() {
     for(var s of json){
       $('#subjects').append('<li>'+s+'</li>');
 	  }
+
+    
 	});
 }
 
