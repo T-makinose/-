@@ -23,11 +23,11 @@ $(function(){
     shre.edit();
   }
 
-	document.getElementById("close").onclick = function() {
+	document.getElementById("_close()").onclick = function() {
     shre.close();
   };
 
-  document.getElementById("edit").onclick = function() {
+  document.getElementById("edit()").onclick = function() {
     shre.edit();
     };
 });
