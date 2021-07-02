@@ -6,7 +6,7 @@ Showreviewctrl.prototype.show = function(id) {
 }
 
 Showreviewctrl.prototype.edit = function(id) {
-  this.id = id;
+  window.location.href = 'editreview.html';
 }
 
 Showreviewctrl.prototype.close = function(id, txt) {
