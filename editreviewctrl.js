@@ -1,7 +1,7 @@
 function Editreviewctrl () {
 }
 
-Editreviewctrl.prototype.nw = function(id) {
+Editreviewctrl.prototype._new = function(id) {
   this.id = id;
   $.getJSON("subject.php", { method: "getTitle" }, function(json){
     for(var s of json){
@@ -19,9 +19,9 @@ Editreviewctrl.prototype.edit = function(id) {
   });
 }
 
-Editreviewctrl.prototype.save = function(id, txt) {
+Editreviewctrl.prototype.save = function(id, _text) {
   this.id = id;
-  this.txt = txt;
+  this._text = _text;
   window.location.href = 'subjectlist.html';
 }
 
@@ -35,7 +35,7 @@ $(function(){
   if (TransitionSource = 'showreview.html') {
     er.edit(1);
   } else {
-    er.nw();
+    er._new();
   }
   document.getElementById("save").onclick = function() {
   er.save();
