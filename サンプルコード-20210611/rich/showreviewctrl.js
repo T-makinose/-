@@ -4,7 +4,7 @@ function Showreviewctrl (){
 Showreviewctrl.prototype.show = function(id) {
   this.id = id;
 
-  $.getJSON("student.php",{method:"subjects"},function(){
+  $.getJSON("student.php",{method:"subjects"},function(json){
     for(var s of json){
         $('#subjects').append('<li>'+s+'</li>');
     }
