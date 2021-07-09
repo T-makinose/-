@@ -41,6 +41,6 @@ $(function(){
         slc.showList();
         slc.show();
     } else {
-        slc.();
+        slc.new();
     }
 });
