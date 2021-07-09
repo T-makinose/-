@@ -3,14 +3,14 @@ function SubjectListCtrl(){
 }
 
 SubjectListCtrl.prototype.showList = function () {
-    $.getJSON("student.php",{method:"subjects"},function(){
+    $.getJSON("student.php",{method:"subjects"},function(json){
         for(var s of json){
             $('#subjects').append('<li>'+s+'</li>');
         }
     });
 
     $.getJSON("subject.php",{method:"getTitle"},function(json){
-        for(var s of int){
+        for(var s of json){
             $('#subjects').append('<li>'+s+'</li>');
             }
           });
@@ -18,7 +18,7 @@ SubjectListCtrl.prototype.showList = function () {
 SubjectListCtrl.prototype.show = function (id) {
     this.id = id;
 
-    $.getJSON("student.php",{method:"subjects"},function(){
+    $.getJSON("student.php",{method:"subjects"},function(json){
         for(var s of json){
             $('#subjects').append('<li>'+s+'</li>');
         }
