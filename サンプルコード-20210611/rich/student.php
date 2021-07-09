@@ -6,7 +6,7 @@ class Student {
   private $studentNo = 0;
   
   public function subjects() {
-    return [1,2,3,4,5];
+    return ["情報ネットワーク","発想法","モバイルシステム技術論"];
   }
 
   public function getReviewText($id){
