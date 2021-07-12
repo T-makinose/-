@@ -7,8 +7,10 @@ class Subject {
   private $title = "TestTitle";
   
   public static function getTitle($id){
-    return "TestStr";
+    $subject=['情報ネットワーク','HCI基礎論','モバイルシステム技術論','論理回路','情報理論'];
+    return $subject[$id];
   }
+
   
 }
 
