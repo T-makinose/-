@@ -10,7 +10,8 @@ class Student {
   }
 
   public function getReviewText($id){
-    return "TestStr";
+    $review = ['科目0のレビューです。','科目1のレビューです。','科目2のレビューです。','科目3のレビューです。','科目4のレビューです。']
+    return $review[$id];
   }
 
   public function setReviewText($id,$text){
