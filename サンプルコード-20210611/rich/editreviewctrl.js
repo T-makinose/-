@@ -12,9 +12,9 @@ Editreviewctrl.prototype._new = function(id) {
 
 Editreviewctrl.prototype.edit = function(id) {
   this.id = id;
-  $.getJSON("subject.php", { method: "getTitle" }, function(json){
+  $.getJSON("subject.php", { method: "getTitle",id:this.id }, function(json){
     for(var s of json){
-      $('#subjects').append('<li>'+s+'</li>');
+      $('#subjects').append(s);
     }
   });
 }
