@@ -37,11 +37,7 @@ $(function(){
   var shre = new Showreviewctrl();
   var TransitionSource = document.referrer;
 
-  if (TransitionSource = 'subjectlist.html') {
-    shre.show(1);
-  } else {
-    shre.edit(1);
-  }
+  shre.show(1);
 
   document.getElementById("edit").onclick = function() {
     shre.edit(1);
