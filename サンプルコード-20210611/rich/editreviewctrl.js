@@ -3,9 +3,9 @@ function Editreviewctrl () {
 
 Editreviewctrl.prototype._new = function(id) {
   this.id = id;
-  $.getJSON("subject.php", { method: "getTitle" }, function(json){
+  $.getJSON("subject.php", { method: "getTitle",id:this.id }, function(json){
     for(var s of json){
-      $('#subjects').append('<li>'+s+'</li>');
+      $('#subjects').append(s);
     }
   });
 }
@@ -32,10 +32,10 @@ Editreviewctrl.prototype.cancel = function() {
 $(function(){
   var er = new Editreviewctrl();
   var TransitionSource = document.referrer;
-  if (TransitionSource = 'showreview.html') {
+  if (TransitionSource == 'showreview.html') {
     er.edit(1);
   } else {
-    er._new();
+    er._new(1);
   }
   document.getElementById("save").onclick = function() {
   er.save();
