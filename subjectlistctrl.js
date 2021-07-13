@@ -8,7 +8,7 @@ SubjectListCtrl.prototype.showList = function () {
     for (var s of json){
       subjectid.push(s);
     }
-    for (var i = 0; i < subjectid.length; i++){
+    for (let i = 0; i < subjectid.length; i++){
       $.getJSON("subject.php",{ method:"getTitle",id:subjectid[i] },function(json){
         for(var t of json){
           subjecttitle = subjecttitle + t;
