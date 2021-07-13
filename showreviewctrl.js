@@ -9,6 +9,12 @@ Showreviewctrl.prototype.show = function(id) {
       $('#subjects').append(s);
     }
   });
+	
+  $.getJSON("student.php",{method:"getReviewText",id:this.id},function(json){
+	  for(var s of json){
+		  $('#reviewtext').append(s);
+	  }
+  });
 
   /*$.getJSON("student.php",{method:"subjects"},function(json){
     for(var s of json){
