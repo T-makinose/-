@@ -33,6 +33,13 @@ Editreviewctrl.prototype.edit = function(id) {
 Editreviewctrl.prototype.save = function(id, _text) {
   this.id = id;
   this._text = _text;
+
+
+    $.getJSON("student.php",{method:"setReviewText",id:this.id,text:this._text},function(json){
+  });
+	
+	
+	
   window.location.href = 'subjectlist.html';
 }
 
@@ -46,14 +53,15 @@ $(function(){
   
   var url = new URL(window.location.href);
   var idParams = url.searchParams.get('id');
+  var reviewText = document.getElementById('reviewtext').value;
 	
   if (TransitionSource == 'showreview.html') {
-    er.edit(idparams);
+    er.edit(idParams);
   } else {
     er._new(idParams);
   }
   document.getElementById("save").onclick = function() {
-  er.save();
+  er.save(idParams,reviewText);
   };
   document.getElementById("cancel").onclick = function() {
   er.cancel();
