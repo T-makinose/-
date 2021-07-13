@@ -22,7 +22,7 @@ SubjectListCtrl.prototype.showList = function () {
 				  				  
 		if(!(reviewText === "")){	  
         console.log(subjecttitle);
-        $('#subjects').append('<li><a href="http://webdesign.center.wakayama-u.ac.jp:60080/sengex2021/A/showreview.html?id=' + i + '">'+subjecttitle+'</a></li>');
+        $('#subjects').append('<li><a href="http://webdesign.center.wakayama-u.ac.jp:60080/sengex2021/A/showreview.html?id=' + i + '">'+subjecttitle+'</a> <div style="color:red">reviewed</div></li>');
 
 		}else{
 		$('#subjects').append('<li><a href="http://webdesign.center.wakayama-u.ac.jp:60080/sengex2021/A/editreview.html?id=' + i + '">'+subjecttitle+'</a></li>');
