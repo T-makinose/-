@@ -1,46 +1,45 @@
 function SubjectListCtrl(){
-
 }
 
 SubjectListCtrl.prototype.showList = function () {
-    $.getJSON("student.php",{method:"subjects"},function(json){
-        for(var s of json){
-            $('#subjects').append('<li>'+s+'</li>');
+  var subjectid = [];
+  var subjecttitle = [];
+  $.getJSON("student.php",{method:"subjects"},function(json){
+    for (var s of json){
+      subjectid.push(s);
+    }
+    for (var i = 0; i < subjectid.length; i++){
+      $.getJSON("subject.php",{ method:"getTitle",id:subjectid[i] },function(json){
+        for(subjecttitle of json){
+          $('#subjects').append('<li>'+subjecttitle+'</li>');
         }
-    });
-
-    $.getJSON("subject.php",{method:"getTitle"},function(json){
-        for(var s of json){
-            $('#subjects').append('<li>'+s+'</li>');
-            }
-          });
+      });
+    }
+  });
 }
 SubjectListCtrl.prototype.show = function (id) {
-    this.id = id;
-
-    $.getJSON("student.php",{method:"subjects"},function(json){
-        for(var s of json){
-            $('#subjects').append('<li>'+s+'</li>');
-        }
-    });
+  this.id = id;
+  
+  $.getJSON("student.php",{method:"subjects"},function(json){
+    for(var s of json){
+      $('#subjects').append('<li>'+s+'</li>');
+    }
+  });
 };
 
-document.write("<script src=\"editreviewctrl.js\"></script> ");
+/*document.write("<script src=\"editreviewctrl.js\"></script> ");*/
 
 SubjectListCtrl.prototype.new = function (id) {
-    this.id = id;
-    var edc = getTitle(id);
+  this.id = id;
+  var edc = getTitle(id);
 };
 
 $(function(){
-    var slc = new SubjectListCtrl();
+  var slc = new SubjectListCtrl();
+  var TransitionSource = document.referrer;
 
-    var TransitionSource = document.referrer;
-
-    if (TransitionSource = 'subjectlist.html') {
-        slc.showList();
-        slc.show();
-    } else {
-        slc.new();
-    }
+  slc.showList();
+  /*slc.show();
+  slc.new();*/
+  }
 });
