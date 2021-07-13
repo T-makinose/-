@@ -41,5 +41,4 @@ $(function(){
   slc.showList();
   /*slc.show();
   slc.new();*/
-  }
 });
