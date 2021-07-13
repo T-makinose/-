@@ -10,9 +10,12 @@ SubjectListCtrl.prototype.showList = function () {
     }
     for (var i = 0; i < subjectid.length; i++){
       $.getJSON("subject.php",{ method:"getTitle",id:subjectid[i] },function(json){
-        for(subjecttitle of json){
-          $('#subjects').append('<li>'+subjecttitle+'</li>');
+        for(var t of json){
+          subjecttitle = subjecttitle + t;
         }
+        console.log(subjecttitle);
+        $('#subjects').append('<li>'+subjecttitle+'</li>');
+        subjecttitle = [];
       });
     }
   });
