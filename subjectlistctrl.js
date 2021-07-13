@@ -14,7 +14,7 @@ SubjectListCtrl.prototype.showList = function () {
           subjecttitle = subjecttitle + t;
         }
         console.log(subjecttitle);
-        $('#subjects').append('<li>'+subjecttitle+'</li>');
+        $('#subjects').append('<li><a href="http://webdesign.center.wakayama-u.ac.jp:60080/sengex2021/A/showreview.html?id=' + i + '">'+subjecttitle+'</a></li>');
         subjecttitle = [];
       });
     }
