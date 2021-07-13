@@ -25,7 +25,7 @@ Showreviewctrl.prototype.show = function(id) {
 
 Showreviewctrl.prototype.edit = function(id) {
   this.id = id;
-  window.location.href = 'editreview.html';
+  window.location.href = 'editreview.html?id=' + this.id;
 
   $.getJSON("subject.php", { method: "getTitle",id:this.id}, function(json){
     for(var s of json){
