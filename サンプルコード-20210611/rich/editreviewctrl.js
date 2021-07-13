@@ -40,7 +40,7 @@ $(function(){
   document.getElementById("save").onclick = function() {
   er.save();
   };
-	document.getElementById("cancel").onclick = function() {
+  document.getElementById("cancel").onclick = function() {
   er.cancel();
   };
 });
