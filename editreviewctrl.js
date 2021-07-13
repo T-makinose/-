@@ -34,7 +34,7 @@ $(function(){
   var TransitionSource = document.referrer;
   
   var url = new URL(window.location.href);
-	var idParams = url.searchParams.get('id');
+  var idParams = url.searchParams.get('id');
 	
   if (TransitionSource == 'showreview.html') {
     er.edit(idparams);
