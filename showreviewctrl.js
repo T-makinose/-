@@ -36,11 +36,14 @@ Showreviewctrl.prototype.close = function(id, txt) {
 $(function(){
   var shre = new Showreviewctrl();
   var TransitionSource = document.referrer;
+	
+  var url = new URL(window.location.href);
+  var idParams = url.searchParams.get('id');
 
-  shre.show(1);
+  shre.show(idParams);
 
   document.getElementById("edit").onclick = function() {
-    shre.edit(1);
+    shre.edit(idParams);
   };
 
   document.getElementById("_close").onclick = function() {
