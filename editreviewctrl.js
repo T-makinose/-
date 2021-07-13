@@ -8,6 +8,11 @@ Editreviewctrl.prototype._new = function(id) {
       $('#subjects').append(s);
     }
   });
+    $.getJSON("student.php",{method:"getReviewText",id:this.id},function(json){
+	  for(var s of json){
+		  $('#reviewtext').append(s);
+	  }
+  });
 }
 
 Editreviewctrl.prototype.edit = function(id) {
@@ -16,6 +21,12 @@ Editreviewctrl.prototype.edit = function(id) {
     for(var s of json){
       $('#subjects').append(s);
     }
+  });
+	
+    $.getJSON("student.php",{method:"getReviewText",id:this.id},function(json){
+	  for(var s of json){
+		  $('#reviewtext').append(s);
+	  }
   });
 }
 
