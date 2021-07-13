@@ -32,10 +32,14 @@ Editreviewctrl.prototype.cancel = function() {
 $(function(){
   var er = new Editreviewctrl();
   var TransitionSource = document.referrer;
+  
+  var url = new URL(window.location.href);
+	var idParams = url.searchParams.get('id');
+	
   if (TransitionSource == 'showreview.html') {
-    er.edit(1);
+    er.edit(idparams);
   } else {
-    er._new(1);
+    er._new(idParams);
   }
   document.getElementById("save").onclick = function() {
   er.save();
