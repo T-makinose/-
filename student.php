@@ -4,7 +4,7 @@ header('content-type: application/json; charset=utf-8');
 class Student {
 
   private $studentNo = 0;
-  private $review = ['科目0のレビューです。','科目1のレビューです。','科目2のレビューです。','科目3のレビューです。','科目4のレビューです。'];
+  private $review = ['科目0のレビューです。','','科目2のレビューです。','科目3のレビューです。','科目4のレビューです。'];
 
 
   public function subjects() {
